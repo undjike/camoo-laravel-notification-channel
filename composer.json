@@ -1,0 +1,54 @@
+{
+    "name": "undjike/camoo-laravel-notification-channel",
+    "description": "Laravel Notification Channel based on Camoo SMS service",
+    "keywords": [
+        "camoo", "laravel", "camoo notification",
+        "notification", "notification channel", "sms notification channel",
+        "sms", "cameroon", "undjike", "africa"
+    ],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ulrich Pascal Ndjike Zoa",
+            "email": "ndjikezoaulrich@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.4",
+        "ext-json": "*",
+        "camoo/sms": "^3.1",
+        "illuminate/notifications": "~6.0 || ~7.0 || ~8.0",
+        "illuminate/support": "~6.0 || ~7.0 || ~8.0"
+    },
+    "require-dev": {
+        "mockery/mockery": "^1.0",
+        "phpunit/phpunit": "^8.0 || ^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Undjike\\CamooNotificationChannel\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Undjike\\CamooNotificationChannel\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "test:coverage": "phpunit --coverage-text --coverage-clover=coverage.clover"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Undjike\\CamooNotificationChannel\\CamooServiceProvider"
+            ]
+        }
+    }
+}
