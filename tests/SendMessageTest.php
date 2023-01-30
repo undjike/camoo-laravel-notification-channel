@@ -7,7 +7,7 @@ use PHPUnit\Framework\TestCase;
 
 class SendMessageTest extends TestCase
 {
-    public function test_send_success_balance(): void
+    public function test_send_message_success(): void
     {
         $client = Message::create(
             'api_key',
