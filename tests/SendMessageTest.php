@@ -4,6 +4,8 @@ namespace Undjike\CamooNotificationChannel\Tests;
 
 use Camoo\Sms\Message;
 use PHPUnit\Framework\TestCase;
+use function PHPUnit\Framework\assertNotEmpty;
+use function PHPUnit\Framework\assertNull;
 
 class SendMessageTest extends TestCase
 {
@@ -14,12 +16,12 @@ class SendMessageTest extends TestCase
             'api_secret'
         );
 
-        $client->from = 'App Brand';
+        $client->from = 'InSave';
         $client->to = '+237697777205';
 
-        $client->message = "Really going well!";
+        $client->message = "New test of pull request!";
 
-        $client->send();
+        assertNotEmpty($client->send()->getId());
     }
 
     public function test_wrong_credentials_error(): void
@@ -34,6 +36,6 @@ class SendMessageTest extends TestCase
 
         $client->message = "Really going well!";
 
-        $client->send();
+        assertNull($client->send()->getId());
     }
 }
