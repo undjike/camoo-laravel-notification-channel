@@ -18,8 +18,8 @@
         "php": ">=7.4",
         "ext-json": "*",
         "camoo/sms": "^3.1",
-        "illuminate/notifications": "~6.0 || ~7.0 || ~8.0",
-        "illuminate/support": "~6.0 || ~7.0 || ~8.0"
+        "illuminate/notifications": "^9.48",
+        "illuminate/support": "^9.48"
     },
     "require-dev": {
         "mockery/mockery": "^1.0",

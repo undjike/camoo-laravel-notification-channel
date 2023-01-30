@@ -14,7 +14,7 @@ class CamooChannel
      * @param mixed $notifiable
      * @param Notification $notification
      *
-     * @return array
+     * @return mixed
      * @throws CouldNotSendNotification
      */
     public function send(mixed $notifiable, Notification $notification): mixed

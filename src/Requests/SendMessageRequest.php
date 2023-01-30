@@ -36,15 +36,15 @@ class SendMessageRequest
         $client->to = $addressees;
         $client->message = $message->getBody();
 
-        if ($message->useClassic()) {
+        if ($message->isClassic()) {
             $client->route = 'classic';
         }
 
-        if ($message->shouldEncrypt()) {
+        if ($message->isEncrypted()) {
             $client->encrypt = true;
         }
 
-        if ($message->bulkSending()) {
+        if ($message->isBulkSending()) {
             return $client->sendBulk();
         }
 

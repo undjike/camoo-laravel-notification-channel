@@ -121,6 +121,16 @@ class CamooMessage
     }
 
     /**
+     * Whether the message is sent in bulk to several addressees
+     *
+     * @return bool
+     */
+    public function isBulkSending(): bool
+    {
+        return $this->batchSending;
+    }
+
+    /**
      * Whether the message should be encrypted
      *
      * @param bool $encrypt
@@ -134,6 +144,16 @@ class CamooMessage
     }
 
     /**
+     * Whether the message should be encrypted
+     *
+     * @return bool
+     */
+    public function isEncrypted(): bool
+    {
+        return $this->encrypt;
+    }
+
+    /**
      * Whether the message should be sent as classic messages (no custom sender)
      *
      * @param bool $classicMessaging
@@ -144,5 +164,15 @@ class CamooMessage
     {
         $this->sendAsClassicMessage = $classicMessaging;
         return $this;
+    }
+
+    /**
+     * Whether the message should be sent as classic messages (no custom sender)
+     *
+     * @return bool
+     */
+    public function isClassic(): bool
+    {
+        return $this->sendAsClassicMessage;
     }
 }
