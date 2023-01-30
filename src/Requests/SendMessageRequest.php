@@ -10,14 +10,14 @@ class SendMessageRequest
 {
     /**
      * @param CamooMessage $message
-     * @param array $addressees
+     * @param array|string $addressee
      * @param array|null $auth
      *
      * @return mixed
      * @throws CouldNotSendNotification
      * @noinspection PhpUndefinedFunctionInspection
      */
-    public static function execute(CamooMessage $message, array $addressees, array $auth = null): mixed
+    public static function execute(CamooMessage $message, $addressee, array $auth = null): mixed
     {
         $auth ??= [
             'key' => config('services.camoo.key'),
@@ -33,7 +33,7 @@ class SendMessageRequest
         }
 
         $client->from = $message->getSender();
-        $client->to = $addressees;
+        $client->to = $addressee;
         $client->message = $message->getBody();
 
         if ($message->isClassic()) {

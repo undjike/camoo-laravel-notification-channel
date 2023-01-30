@@ -21,7 +21,7 @@
 
 ## Introduction
 
-This is a package for Laravel Applications which enables you to send notifications through Camoo SMS Channel.
+This is a package for Laravel applications which enables you to send notifications through Camoo SMS Channel.
 
 The package uses <a href="https://www.camoo.cm/bulk-sms">Camoo SMS Service</a> to perform SMS dispatching.
 
@@ -44,7 +44,7 @@ return [
     //...
 
     'camoo' => [
-        'key' => env('CAMOO_API_KEY'), // You can type in directly your credentials 
+        'key' => env('CAMOO_API_KEY'), // Your credentials 
         'secret' => env('CAMOO_SECRET_KEY')
     ],
 ];

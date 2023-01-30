@@ -27,7 +27,7 @@ class CamooChannel
 
         if (! method_exists($notification, 'toCamoo')) {
             throw CouldNotSendNotification::camooRespondedWithAnError(
-                'Your need to define the toCamoo method on your notification for it to be sent.'
+                'You need to define the toCamoo method on your notification for it to be sent.'
             );
         }
 
@@ -40,7 +40,7 @@ class CamooChannel
 
         if (! $message instanceof CamooMessage) {
             throw CouldNotSendNotification::camooRespondedWithAnError(
-                'Required string or CamooMessage instance as the return type of toCamoo.'
+                'Expected string or CamooMessage instance as the return type of toCamoo.'
             );
         }
 
@@ -50,11 +50,7 @@ class CamooChannel
             );
         }
 
-        if (is_string($recipient)) {
-            $recipient = [$recipient];
-        }
-
-        if (! is_array($recipient)) {
+        if (! is_array($recipient) && ! is_string($recipient)) {
             throw CouldNotSendNotification::camooRespondedWithAnError(
                 'Expected string or array as recipient.'
             );
