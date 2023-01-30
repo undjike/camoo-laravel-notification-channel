@@ -11,13 +11,13 @@ class CamooChannel
     /**
      * Send the given notification.
      *
-     * @param mixed $notifiable
+     * @param $notifiable
      * @param Notification $notification
      *
      * @return mixed
      * @throws CouldNotSendNotification
      */
-    public function send(mixed $notifiable, Notification $notification): mixed
+    public function send($notifiable, Notification $notification)
     {
         if (! $recipient = $notifiable->routeNotificationFor('Camoo')) {
             throw CouldNotSendNotification::camooRespondedWithAnError(
