@@ -19,6 +19,13 @@ class CamooMessage
     protected string $brand = 'App Brand';
 
     /**
+     * URL to send message status change to
+     *
+     * @var string|null
+     */
+    protected ?string $notifyUrl = null;
+
+    /**
      * Send in bulk
      *
      * @var bool
@@ -105,6 +112,29 @@ class CamooMessage
     public function getSender(): string
     {
         return $this->brand;
+    }
+
+    /**
+     * Set notify URL
+     *
+     * @param string $url
+     *
+     * @return CamooMessage
+     */
+    public function notifyUrl(string $url): CamooMessage
+    {
+        $this->notifyUrl = $url;
+        return $this;
+    }
+
+    /**
+     * Get notify URL
+     *
+     * @return string|null
+     */
+    public function getNotifyUrl(): ?string
+    {
+        return $this->notifyUrl;
     }
 
     /**

@@ -36,6 +36,10 @@ class SendMessageRequest
         $client->to = $addressee;
         $client->message = $message->getBody();
 
+        if (! empty($url = $message->getNotifyUrl())) {
+            $client->notify_url = $url;
+        }
+
         if ($message->isClassic()) {
             $client->route = 'classic';
         }
