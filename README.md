@@ -3,10 +3,10 @@
 </p>
 
 <p align="center">
-    <a href="https://packagist.org/packages/undjike/camoo-laravel-notification-channel"><img src="https://poser.pugx.org/undjike/camoo-laravel-notification-channel/v/stable.svg" alt="Latest Stable Version"></a>
-    <a href="https://packagist.org/packages/undjike/camoo-laravel-notification-channel"><img src="https://poser.pugx.org/undjike/camoo-laravel-notification-channel/license.svg" alt="License"></a>
-    <a href="https://packagist.org/packages/undjike/camoo-laravel-notification-channel"><img src="https://poser.pugx.org/undjike/camoo-laravel-notification-channel/d/total.svg" alt="Total Downloads"></a>
-    <a href="https://packagist.org/packages/undjike/camoo-laravel-notification-channel"><img src="https://poser.pugx.org/undjike/camoo-laravel-notification-channel/dependents.svg" alt="Dependents"></a>
+    <a href="https://packagist.org/packages/undjike/camoo-laravel-notification-channel"><img src="https://poser.pugx.org/undjike/camoo-laravel-notification-channel/v/stable" alt="Latest Stable Version"></a>
+    <a href="https://packagist.org/packages/undjike/camoo-laravel-notification-channel"><img src="https://poser.pugx.org/undjike/camoo-laravel-notification-channel/license" alt="License"></a>
+    <a href="https://packagist.org/packages/undjike/camoo-laravel-notification-channel"><img src="https://poser.pugx.org/undjike/camoo-laravel-notification-channel/downloads" alt="Total Downloads"></a>
+    <a href="https://packagist.org/packages/undjike/camoo-laravel-notification-channel"><img src="https://poser.pugx.org/undjike/camoo-laravel-notification-channel/require/php" alt="Dependents"></a>
 </p>
 
 ## Introduction
