@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://www.camoo.cm/img/home1_bg.png"  alt="logo"/>
+    <img height="200" src="https://www.camoo.cm/img/home1_bg.png"  alt="logo"/>
 </p>
 
 <p align="center">
