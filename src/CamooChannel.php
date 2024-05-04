@@ -17,9 +17,13 @@ class CamooChannel
      * @return mixed
      * @throws CouldNotSendNotification
      */
-    public function send($notifiable, Notification $notification)
+    public function send($notifiable, Notification $notification): mixed
     {
-        if (! $recipient = $notifiable->routeNotificationFor('Camoo')) {
+        $recipient = is_string($notifiable)
+            ? $notifiable
+            : $notifiable->routeNotificationFor('Camoo');
+
+        if (! $recipient) {
             throw CouldNotSendNotification::camooRespondedWithAnError(
                 'Your notifiable instance does not have function routeNotificationForCamoo.'
             );

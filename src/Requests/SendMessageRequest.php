@@ -16,8 +16,9 @@ class SendMessageRequest
      * @return mixed
      * @throws CouldNotSendNotification
      * @noinspection PhpUndefinedFunctionInspection
+     * @noinspection PhpPossiblePolymorphicInvocationInspection
      */
-    public static function execute(CamooMessage $message, $addressee, array $auth = null)
+    public static function execute(CamooMessage $message, array|string $addressee, array $auth = null): mixed
     {
         $auth ??= [
             'key' => config('services.camoo.key'),
