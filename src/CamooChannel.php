@@ -2,6 +2,7 @@
 
 namespace Undjike\CamooNotificationChannel;
 
+use Illuminate\Notifications\AnonymousNotifiable;
 use Illuminate\Notifications\Notification;
 use Undjike\CamooNotificationChannel\Exceptions\CouldNotSendNotification;
 use Undjike\CamooNotificationChannel\Requests\SendMessageRequest;
@@ -19,9 +20,11 @@ class CamooChannel
      */
     public function send($notifiable, Notification $notification): mixed
     {
-        $recipient = is_string($notifiable)
-            ? $notifiable
-            : $notifiable->routeNotificationFor('Camoo');
+        $recipient = match (true) {
+            is_string($notifiable) => $notifiable,
+            $notifiable instanceof AnonymousNotifiable => $notifiable->routeNotificationFor(__CLASS__),
+            default => $notifiable->routeNotificationFor('Camoo')
+        };
 
         if (! $recipient) {
             throw CouldNotSendNotification::camooRespondedWithAnError(
