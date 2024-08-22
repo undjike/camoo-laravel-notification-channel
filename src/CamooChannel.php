@@ -22,8 +22,8 @@ class CamooChannel
     {
         $recipient = match (true) {
             is_string($notifiable) => $notifiable,
-            $notifiable instanceof AnonymousNotifiable => $notifiable->routeNotificationFor(__CLASS__),
-            default => $notifiable->routeNotificationFor('Camoo')
+            $notifiable instanceof AnonymousNotifiable && $notifiable->routeNotificationFor(__CLASS__) => $notifiable->routeNotificationFor(__CLASS__),
+            default => $notifiable->routeNotificationFor('camoo')
         };
 
         if (! $recipient) {
